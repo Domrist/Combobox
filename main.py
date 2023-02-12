@@ -9,8 +9,9 @@ def selected(event):
     selection = combobox.get()
     print(selection)
 
-languages = ["Russian", "French", "English", "Deutch"]
-combobox = ttk.Combobox(values=languages, state="readonly")
+
+tretyakov_gallery = ["Tretyakov", "Turgenev", "Kamenetsky", "Protodeacon"]
+combobox = ttk.Combobox(values=tretyakov_gallery, state="readonly")
 combobox.pack(anchor=NW, fill=X, padx=5, pady=5)
 combobox.bind("<<ComboboxSelected>>", selected)
 print("Programm started")
