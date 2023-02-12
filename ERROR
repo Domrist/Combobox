@@ -1,0 +1,38 @@
+from  tkinter import messagebox
+from tkinter import *
+from tkinter import ttk
+DataBase=[]
+root = Tk()
+root.title("Combobox example")
+root.geometry("250x200")
+ 
+def selected(event):
+    selection = combobox.get()
+    print(selection)
+def addToDatabase():
+    with open("Data.txt", "w") as file:
+        a=entryName.get() + entryLastName.get()
+        for i in a:
+            print(i)
+            if i in "1234567890":
+                print("break")
+                messagebox.showinfo(title="Error", text="ERROR")
+                return
+        file.write(entryName.get()+","+entryLastName.get()+","+combobox.get()+"\n")
+BYZ = ["какой-то","to` rfrjq-nj","ещё какой-то", "МГУ"]
+combobox = ttk.Combobox(values=BYZ, state="readonly")
+combobox.pack(anchor=NW, fill=X, padx=5, pady=5)
+combobox.bind("<<ComboboxSelected>>", selected)
+print("Programm started")
+
+entryName=Entry()
+entryName.pack()
+entryLastName = Entry()
+entryLastName.pack()
+
+assignToDataBase = Button(text="Внести в базу данных", command=addToDatabase)
+assignToDataBase.pack()
+
+
+
+root.mainloop()
