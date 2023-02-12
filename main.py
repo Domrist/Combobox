@@ -9,7 +9,7 @@ def selected(event):
     selection = combobox.get()
     print(selection)
 
-languages = ["Russian", "French", "English", "Deutch"]
+languages = ["Anna", "Koljia", "Katya", "Vica"]
 combobox = ttk.Combobox(values=languages, state="readonly")
 combobox.pack(anchor=NW, fill=X, padx=5, pady=5)
 combobox.bind("<<ComboboxSelected>>", selected)
